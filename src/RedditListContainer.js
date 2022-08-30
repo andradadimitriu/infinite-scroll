@@ -11,7 +11,7 @@ function RedditListContainer() {
     const handleScroll = useCallback(()=>{
         if (Math.ceil(window.innerHeight + document.documentElement.scrollTop) !== document.documentElement.offsetHeight || loadMore)
             return;
-        setLoadMore(true)},[]);
+        setLoadMore(true)}, [setLoadMore, loadMore]);
 
     useEffect(() => {
         (async function () {
@@ -26,12 +26,12 @@ function RedditListContainer() {
             setPosts(allPosts);
             setLoadMore(false);
         })();
-    }, [setPosts, loadMore]);
+    }, [setPosts, setPosts, setLoadMore, setAfter, loadMore, after, posts]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    },[])
+    },)
 
     return error ? <ErrorDisplay/> :
         <div className="reddit-list-container">
