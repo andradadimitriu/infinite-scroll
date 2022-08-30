@@ -1,0 +1,15 @@
+.reddit-list-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.reddit-list-item img{
+    width:50%;
+}
+
+.reddit-list-item .loading{
+    margin: 20px;
+}
