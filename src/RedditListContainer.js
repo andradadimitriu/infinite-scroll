@@ -30,6 +30,11 @@ function RedditListContainer() {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('mousewheel', handleScroll);
+        return ()=>{
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('mousewheel', handleScroll);
+        }
     },[handleScroll])
 
     return error ? <ErrorDisplay/> :
