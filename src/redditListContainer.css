@@ -4,3 +4,7 @@
     justify-content: space-around;
     align-items: center;
 }
+.reddit-list-container .loading{
+    margin: 20px;
+    font-size: larger;
+}
