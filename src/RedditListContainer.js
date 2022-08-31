@@ -26,12 +26,11 @@ function RedditListContainer() {
             setPosts(allPosts);
             setLoadMore(false);
         })();
-    }, [setPosts, setPosts, setLoadMore, setAfter, loadMore, after, posts]);
+    }, [setPosts, setLoadMore, setAfter, loadMore, after, posts]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    },)
+    },[handleScroll])
 
     return error ? <ErrorDisplay/> :
         <div className="reddit-list-container">
