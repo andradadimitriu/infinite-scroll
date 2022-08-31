@@ -9,7 +9,7 @@ function RedditListContainer() {
     const [error, setError] = useState(undefined);
     const [loadMore,setLoadMore] = useState(false);
     const handleScroll = useCallback(()=>{
-        if (Math.ceil(window.innerHeight + document.documentElement.scrollTop) !== document.documentElement.offsetHeight || loadMore)
+        if (Math.abs(window.innerHeight + document.documentElement.scrollTop - document.documentElement.offsetHeight) >= 1 || loadMore)
             return;
         setLoadMore(true)}, [setLoadMore, loadMore]);
 
